@@ -17,13 +17,22 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView txtView;
     private NotificationReciver nReceiver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         nReceiver = new NotificationReciver();
         IntentFilter filter = new IntentFilter();
-        //filter.addAction("com.kpbird.nlsexample.NOTIFICATION_LISTENER_EXAMPLE");
-        registerReceiver(nReceiver,filter);
+        filter.addAction("com.home.nomet.notificationstest.NOTIFICATION_LISTENER_EXAMPLE");
+        registerReceiver(nReceiver, filter);
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(nReceiver);
+
     }
 }

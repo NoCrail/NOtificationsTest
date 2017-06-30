@@ -11,9 +11,10 @@ import android.widget.Toast;
 /**
  * Created by Nomet on 25.06.2017.
  */
+
 public class NotificationListener extends
         NotificationListenerService {
-
+    //private NLServiceReceiver nlservicereciver;
     @Override
     public void onNotificationPosted(
             StatusBarNotification sbn) {
@@ -27,15 +28,16 @@ public class NotificationListener extends
             StatusBarNotification sbn) {
 
     }
-}
+    class NotificationReciver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
 
+        }
 
-class NotificationReciver extends BroadcastReceiver {
-    @Override
-    public void onReceive(Context context, Intent intent) {
 
     }
-
-
 }
+
+
+
 
